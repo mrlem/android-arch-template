@@ -1,15 +1,16 @@
 package org.mrlem.sample.cleanarch.features.main
 
+import androidx.lifecycle.LiveDataReactiveStreams
 import androidx.lifecycle.ViewModel
+import io.reactivex.rxjava3.core.BackpressureStrategy
 import org.mrlem.sample.domain.repositories.SomethingRepository
 
 class MainViewModel(
     repository: SomethingRepository
 ) : ViewModel() {
 
-    init {
-        val data = repository.findSomething()
-        println("viewModel: repo sends $data")
-    }
+    val data = LiveDataReactiveStreams.fromPublisher(
+        repository.findSomething().toFlowable(BackpressureStrategy.DROP)
+    )
 
 }

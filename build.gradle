@@ -9,6 +9,10 @@ buildscript {
                         "org.koin:koin-android:$koin_version",
                         "org.koin:koin-android-scope:$koin_version",
                         "org.koin:koin-android-viewmodel:$koin_version"
+                ],
+                rx: [
+                        "io.reactivex.rxjava3:rxjava:3.0.2",
+                        "io.reactivex.rxjava3:rxandroid:3.0.0"
                 ]
         ]
     }

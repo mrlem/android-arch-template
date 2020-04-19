@@ -1,2 +1,3 @@
 rootProject.name='Sample Clean Arch'
 include ':app'
+include ':domain'

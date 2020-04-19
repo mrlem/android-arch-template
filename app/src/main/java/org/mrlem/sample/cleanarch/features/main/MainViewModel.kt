@@ -3,8 +3,13 @@ package org.mrlem.sample.cleanarch.features.main
 import androidx.lifecycle.ViewModel
 import org.mrlem.sample.domain.repositories.SomethingRepository
 
-class MainViewModel : ViewModel() {
+class MainViewModel(
+    repository: SomethingRepository
+) : ViewModel() {
 
-    private val repository: SomethingRepository = org.mrlem.sample.data.repositories.SomethingRepository()
+    init {
+        val data = repository.findSomething()
+        println("viewModel: repo sends $data")
+    }
 
 }

@@ -9,6 +9,13 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
 
+/**
+ * Base application to be extended by the application class.
+ *
+ * Provides:
+ * - easy dependency injection initialization (just provide the koin modules)
+ * - strict mode setup in debug builds
+ */
 abstract class BaseApplication : Application() {
 
     protected abstract val modules: List<Module>
@@ -21,11 +28,13 @@ abstract class BaseApplication : Application() {
         initStrictMode()
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // Internal
+    ///////////////////////////////////////////////////////////////////////////
+
     private fun initKoin() {
         startKoin {
-            // Android context
             androidContext(this@BaseApplication)
-            // modules
             modules(modules)
         }
     }

@@ -16,10 +16,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
+    // androidx - ktx
+    api 'androidx.activity:activity-ktx:1.1.0'
+    api 'androidx.core:core-ktx:1.2.0'
     api 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
 
     api libraries.di

@@ -1,4 +1,4 @@
-package org.mrlem.sample.cleanarch
+package org.mrlem.sample.cleanarch.features.main
 
 import androidx.lifecycle.ViewModel
 

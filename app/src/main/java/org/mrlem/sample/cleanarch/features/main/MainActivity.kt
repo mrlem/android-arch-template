@@ -1,8 +1,9 @@
-package org.mrlem.sample.cleanarch
+package org.mrlem.sample.cleanarch.features.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
+import org.mrlem.sample.cleanarch.R
 
 class MainActivity : AppCompatActivity() {
 

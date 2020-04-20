@@ -9,6 +9,9 @@ android {
         versionName "1.0"
     }
     buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
@@ -17,20 +20,17 @@ android {
 }
 
 dependencies {
+    // internal
     implementation project(":arch")
     implementation project(":domain")
     implementation project(":data")
 
+    // external
+    implementation libraries.android.constraintlayout
     implementation libraries.di
     implementation libraries.rx
 
-    // androidx
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-
     // test
-    testImplementation 'junit:junit:4.12'
-
-    // test - android
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation libraries.tests
+    androidTestImplementation libraries.android.tests
 }

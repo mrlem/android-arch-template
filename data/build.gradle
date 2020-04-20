@@ -2,7 +2,9 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 dependencies {
+    // internal
     implementation project(":domain")
 
+    // external
     implementation libraries.rx
 }

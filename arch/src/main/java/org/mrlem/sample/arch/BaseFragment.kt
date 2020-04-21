@@ -43,6 +43,8 @@ abstract class BaseFragment : Fragment() {
 
     /**
      * Initialize view-model state observations.
+     *
+     * Note: when observing / binding to the state livedata here, please do use viewLifecycleOwner.
      */
     protected open fun initObservations() {}
 

@@ -1,6 +1,6 @@
 package org.mrlem.sample.domain.repositories
 
-import io.reactivex.rxjava3.core.Observable
+import io.reactivex.Observable
 import org.mrlem.sample.domain.models.Something
 
 interface SomethingRepository {

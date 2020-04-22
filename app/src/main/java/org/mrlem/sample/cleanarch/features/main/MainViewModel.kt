@@ -1,6 +1,6 @@
 package org.mrlem.sample.cleanarch.features.main
 
-import io.reactivex.rxjava3.kotlin.addTo
+import io.reactivex.rxkotlin.addTo
 import org.mrlem.sample.arch.BaseViewModel
 import org.mrlem.sample.domain.repositories.SomethingRepository
 

@@ -4,7 +4,7 @@ import androidx.annotation.CallSuper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.rxjava3.disposables.CompositeDisposable
+import io.reactivex.disposables.CompositeDisposable
 
 /**
  * Base view-model to be extended by feature view-models.

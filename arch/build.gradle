@@ -21,6 +21,7 @@ android {
 dependencies {
     // external
     api libraries.android.ktx.activity
+    api libraries.android.ktx.fragment
     api libraries.android.ktx.core
     api libraries.android.ktx.livedata
     api libraries.di

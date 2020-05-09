@@ -1,14 +1,16 @@
 buildscript {
     ext {
         versions = [
-                kotlin: '1.3.71',
+                kotlin: '1.3.72',
                 koin: '2.1.5'
         ]
     }
+
     repositories {
         google()
         jcenter()
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.6.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
@@ -24,12 +26,16 @@ subprojects {
         jcenter()
     }
 
-    // base kotlin compile config: java 1.8 compliant
-    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
+    // base java compile config
+    tasks.withType(JavaCompile).all {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+    }
 
+    // base kotlin compile config
+    tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
         kotlinOptions {
+            freeCompilerArgs = [ "-Xjsr305=strict" ]
             jvmTarget = JavaVersion.VERSION_1_8
         }
     }

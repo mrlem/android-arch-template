@@ -28,8 +28,6 @@ dependencies {
 
     // external
     implementation libraries.android.constraintlayout
-    implementation libraries.di
-    implementation libraries.rx
 
     // test
     testImplementation libraries.tests

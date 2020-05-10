@@ -19,7 +19,6 @@ ext {
                     "org.koin:koin-android-viewmodel:$versions.koin"
             ],
             kotlin: [
-                    fileTree(dir: 'libs', include: ['*.jar', '*.aar']),
                     "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
             ],
             rest: [

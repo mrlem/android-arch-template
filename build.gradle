@@ -60,13 +60,39 @@ subprojects {
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             }
 
+            buildTypes {
+                release {
+                    minifyEnabled true
+                    proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+                }
+            }
+
             compileOptions {
                 sourceCompatibility JavaVersion.VERSION_1_8
                 targetCompatibility JavaVersion.VERSION_1_8
             }
+
+            sourceSets {
+                main.java.srcDirs += 'src/main/kotlin'
+            }
         }
         dependencies {
             implementation libraries.kotlin
+        }
+    }
+
+    // base config for android application modules
+    plugins.withType(com.android.build.gradle.AppPlugin).whenPluginAdded {
+        android {
+            buildTypes {
+                debug {
+                    applicationIdSuffix ".debug"
+                }
+
+                release {
+                    shrinkResources true
+                }
+            }
         }
     }
 }

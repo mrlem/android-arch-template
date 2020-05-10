@@ -3,5 +3,5 @@ apply plugin: 'kotlin'
 
 dependencies {
     // external
-    implementation libraries.rx
+    api libraries.rx
 }

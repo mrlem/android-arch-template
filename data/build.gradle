@@ -5,7 +5,4 @@ apply plugin: 'kotlin-android-extensions'
 dependencies {
     // internal
     implementation project(":domain")
-
-    // external
-    implementation libraries.rx
 }

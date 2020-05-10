@@ -20,6 +20,7 @@ android {
 
 dependencies {
     // external
+    api libraries.android.constraintlayout
     api libraries.android.ktx.activity
     api libraries.android.ktx.fragment
     api libraries.android.ktx.core

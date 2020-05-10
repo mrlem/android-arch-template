@@ -1,5 +1,6 @@
 package org.mrlem.sample.cleanarch.features.main
 
+import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.map
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -15,6 +16,7 @@ class MainActivity : BaseActivity() {
     override fun initObservations() {
         viewModel.state
             .map { it.data }
+            .distinctUntilChanged()
             .bind(this, this::updateCounter)
     }
 

@@ -17,7 +17,7 @@ class MainActivity : BaseActivity() {
         viewModel.state
             .map { it.data }
             .distinctUntilChanged()
-            .bind(this, this::updateCounter)
+            .bind(this, ::updateCounter)
     }
 
     ///////////////////////////////////////////////////////////////////////////

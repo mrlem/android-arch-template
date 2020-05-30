@@ -33,7 +33,7 @@ ext {
                     "io.reactivex.rxjava2:rxkotlin:2.4.0"
             ],
             tests: [
-                    "junit:junit:4.12"
+                    "junit:junit:4.13"
             ]
     ]
 }

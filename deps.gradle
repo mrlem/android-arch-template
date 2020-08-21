@@ -22,9 +22,9 @@ ext {
                     "org.jetbrains.kotlin:kotlin-stdlib:$versions.kotlin"
             ],
             rest: [
-                    "com.squareup.retrofit2:retrofit:2.8.2",
-                    "com.squareup.retrofit2:converter-moshi:2.8.2",
-                    "com.squareup.retrofit2:adapter-rxjava2:2.8.2",
+                    "com.squareup.retrofit2:retrofit:$versions.retrofit",
+                    "com.squareup.retrofit2:converter-moshi:$versions.retrofit",
+                    "com.squareup.retrofit2:adapter-rxjava2:$versions.retrofit",
                     "com.squareup.okhttp3:logging-interceptor:4.2.2"
             ],
             rx: [

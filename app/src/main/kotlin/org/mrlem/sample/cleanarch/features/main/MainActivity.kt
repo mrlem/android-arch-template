@@ -5,7 +5,6 @@ import androidx.lifecycle.map
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.mrlem.sample.arch.BaseActivity
-import org.mrlem.sample.arch.ext.android.bind
 import org.mrlem.sample.cleanarch.R
 
 class MainActivity : BaseActivity() {
@@ -17,7 +16,7 @@ class MainActivity : BaseActivity() {
         viewModel.state
             .map { it.data }
             .distinctUntilChanged()
-            .bind(this, ::updateCounter)
+            .observe(this, ::updateCounter)
     }
 
     ///////////////////////////////////////////////////////////////////////////

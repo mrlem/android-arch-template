@@ -17,8 +17,8 @@ class AllTogetherTransition : TransitionSet() {
     }
 
     companion object {
-        private const val DURATION = 250L
-        private val INTERPOLATOR = AccelerateDecelerateInterpolator()
+        const val DURATION = 250L
+        val INTERPOLATOR = AccelerateDecelerateInterpolator()
     }
 
 }

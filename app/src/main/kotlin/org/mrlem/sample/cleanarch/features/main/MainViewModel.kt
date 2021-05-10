@@ -2,11 +2,13 @@ package org.mrlem.sample.cleanarch.features.main
 
 import io.reactivex.rxkotlin.addTo
 import org.mrlem.sample.arch.BaseViewModel
+import org.mrlem.sample.cleanarch.features.main.MainContract.Event
+import org.mrlem.sample.cleanarch.features.main.MainContract.State
 import org.mrlem.sample.domain.repositories.SomethingRepository
 
 class MainViewModel(
     private val repository: SomethingRepository
-) : BaseViewModel<MainState>(MainState()) {
+) : BaseViewModel<State, Event>(State()) {
 
     override fun onStart() {
         repository.findSomething()

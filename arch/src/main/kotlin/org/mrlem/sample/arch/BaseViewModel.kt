@@ -58,8 +58,7 @@ abstract class BaseViewModel<State : BaseState, Event : BaseEvent<*>>(initialSta
      * ```
      */
     protected fun updateState(transition: (State.() -> State)) {
-        val newState = transition(currentState)
-        _state.postValue(newState)
+        _state.value = transition(currentState)
     }
 
     /**

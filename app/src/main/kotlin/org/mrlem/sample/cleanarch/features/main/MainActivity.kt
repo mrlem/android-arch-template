@@ -2,15 +2,14 @@ package org.mrlem.sample.cleanarch.features.main
 
 import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.map
-import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.mrlem.sample.arch.BaseActivity
-import org.mrlem.sample.cleanarch.R
+import org.mrlem.sample.cleanarch.databinding.ActivityMainBinding
 
-class MainActivity : BaseActivity() {
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
-    override val layout: Int = R.layout.activity_main
     private val viewModel: MainViewModel by viewModel()
+    override val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun initObservations() {
         viewModel.state
@@ -24,7 +23,7 @@ class MainActivity : BaseActivity() {
     ///////////////////////////////////////////////////////////////////////////
 
     private fun updateCounter(data: String) {
-        counter.text = data
+        binding.counter.text = data
     }
 
 }

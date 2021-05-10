@@ -3,6 +3,7 @@ package org.mrlem.sample.arch
 import android.os.Bundle
 import androidx.annotation.CallSuper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.viewbinding.ViewBinding
 
 /**
  * Base activity to be extended by feature activities.
@@ -11,14 +12,14 @@ import androidx.appcompat.app.AppCompatActivity
  * - easy layout declaration
  * - handy callbacks to categorize init code
  */
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<ActivityViewBinding : ViewBinding> : AppCompatActivity() {
 
-    protected abstract val layout: Int
+    abstract val binding: ActivityViewBinding
 
     @CallSuper
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layout)
+        setContentView(binding.root)
 
         initViews()
         initEvents()

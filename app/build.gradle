@@ -1,12 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 android {
     defaultConfig {
         applicationId "org.mrlem.sample.cleanarch"
         versionCode 1
         versionName "1.0"
+    }
+    buildFeatures {
+        viewBinding true
     }
 }
 

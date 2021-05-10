@@ -1,21 +1,21 @@
 buildscript {
     ext {
         versions = [
-                kotlin: '1.4.10',
-                koin: '2.1.6',
-                retrofit: '2.8.2'
+                kotlin: '1.4.32',
+                koin: '2.2.2',
+                retrofit: '2.9.0'
         ]
     }
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.0'
+        classpath 'com.android.tools.build:gradle:4.2.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$versions.kotlin"
-        classpath "org.koin:koin-gradle-plugin:$versions.koin"
+        classpath "io.insert-koin:koin-gradle-plugin:$versions.koin"
     }
 }
 
@@ -24,7 +24,7 @@ apply from: 'deps.gradle'
 subprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     // base java compile config
@@ -52,12 +52,12 @@ subprojects {
     // base config for android modules
     plugins.withType(com.android.build.gradle.BasePlugin).whenPluginAdded {
         android {
-            compileSdkVersion 29
-            buildToolsVersion "29.0.3"
+            compileSdkVersion 30
+            buildToolsVersion "30.0.2"
 
             defaultConfig {
                 minSdkVersion 21
-                targetSdkVersion 29
+                targetSdkVersion 30
 
                 testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
             }

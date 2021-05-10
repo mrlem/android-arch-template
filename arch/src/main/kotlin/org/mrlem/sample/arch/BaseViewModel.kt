@@ -62,6 +62,13 @@ abstract class BaseViewModel<State : BaseState, Event : BaseEvent<*>>(initialSta
     }
 
     /**
+     * Send an event.
+     */
+    protected  fun notifyEvent(event: Event) {
+        _events.value = event
+    }
+
+    /**
      * Called when the view-model is being used.
      */
     open fun onStart() {}

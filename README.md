@@ -1,4 +1,5 @@
-## TODO
+## Clean architecture + MVVM + state
 
-* migrate to rxjava3
-* arch subproject should go to maven central
+Provides:
+* base modules
+* a sample app

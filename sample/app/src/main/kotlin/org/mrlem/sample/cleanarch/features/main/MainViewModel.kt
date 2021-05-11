@@ -1,7 +1,7 @@
 package org.mrlem.sample.cleanarch.features.main
 
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.rxkotlin.addTo
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
+import io.reactivex.rxjava3.kotlin.addTo
 import org.mrlem.sample.arch.BaseViewModel
 import org.mrlem.sample.cleanarch.features.main.MainContract.Event
 import org.mrlem.sample.cleanarch.features.main.MainContract.State

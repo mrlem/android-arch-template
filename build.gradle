@@ -19,8 +19,6 @@ buildscript {
     }
 }
 
-apply from: 'deps.gradle'
-
 subprojects {
     repositories {
         google()
@@ -38,14 +36,6 @@ subprojects {
         kotlinOptions {
             freeCompilerArgs = [ "-Xjsr305=strict" ]
             jvmTarget = JavaVersion.VERSION_1_8
-        }
-    }
-
-    // base config for java library modules
-    plugins.withType(JavaLibraryPlugin).whenPluginAdded {
-        dependencies {
-            implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-            implementation libraries.kotlin
         }
     }
 
@@ -77,11 +67,6 @@ subprojects {
             sourceSets {
                 main.java.srcDirs += 'src/main/kotlin'
             }
-        }
-
-        dependencies {
-            implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-            implementation libraries.kotlin
         }
     }
 

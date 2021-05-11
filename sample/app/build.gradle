@@ -1,6 +1,8 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
+apply from: '../deps.gradle'
+
 android {
     defaultConfig {
         applicationId "org.mrlem.sample.cleanarch"
@@ -18,7 +20,8 @@ dependencies {
     implementation project(":sample:domain")
     implementation project(":sample:data")
 
-    // test
+    // external
+    implementation libraries.kotlin
     testImplementation libraries.tests
     androidTestImplementation libraries.android.tests
 }

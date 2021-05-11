@@ -1,7 +1,12 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
+apply from: '../deps.gradle'
+
 dependencies {
     // internal
     implementation project(":arch:domain")
+
+    // external
+    implementation libraries.kotlin
 }

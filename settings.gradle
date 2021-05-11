@@ -1,7 +1,0 @@
-rootProject.name='android-arch'
-
-include ':arch'
-
-include ':sample:app'
-include ':sample:domain'
-include ':sample:data'

@@ -3,5 +3,5 @@ apply plugin: 'kotlin-android'
 
 dependencies {
     // internal
-    implementation project(":domain")
+    implementation project(":sample:domain")
 }

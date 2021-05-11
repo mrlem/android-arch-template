@@ -16,7 +16,7 @@ android {
 
 dependencies {
     // internal
-    implementation project(":arch:app")
+    implementation project(":arch:android-arch-app")
     implementation project(":sample:domain")
     implementation project(":sample:data")
 

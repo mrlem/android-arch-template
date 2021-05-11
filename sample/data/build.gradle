@@ -5,7 +5,7 @@ apply from: '../deps.gradle'
 
 dependencies {
     // internal
-    implementation project(":arch:data")
+    implementation project(":arch:android-arch-data")
     implementation project(":sample:domain")
 
     // external

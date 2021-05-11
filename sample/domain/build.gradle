@@ -5,7 +5,7 @@ apply from: '../deps.gradle'
 
 dependencies {
     // internal
-    implementation project(":arch:domain")
+    implementation project(":arch:android-arch-domain")
 
     // external
     implementation libraries.kotlin

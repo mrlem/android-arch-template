@@ -1,4 +1,4 @@
-rootProject.name='Sample Clean Arch'
+rootProject.name='sample-clean-arch'
 
 include ':arch'
 

@@ -3,5 +3,6 @@ apply plugin: 'kotlin-android'
 
 dependencies {
     // internal
+    implementation project(":arch:data")
     implementation project(":sample:domain")
 }

@@ -2,6 +2,7 @@ import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin as AndroidApplicationPlugin
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.LibraryExtension
+import ext.configure
 import com.android.build.gradle.LibraryPlugin as AndroidLibraryPlugin
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
@@ -30,52 +31,6 @@ allprojects {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
             jvmTarget = Versions.javaVersion
-        }
-    }
-
-    // base config for android modules
-    fun BaseExtension.configureAndroid() {
-        setCompileSdkVersion(Versions.compileSdkVersion)
-        buildToolsVersion(Versions.buildToolsVersion)
-
-        defaultConfig {
-            minSdkVersion(Versions.minSdkVersion)
-            targetSdkVersion(Versions.targetSdkVersion)
-            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        }
-
-        buildTypes {
-            getByName("release") {
-                isMinifyEnabled = true
-                proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
-                )
-            }
-        }
-
-        compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
-        }
-
-        sourceSets {
-            getByName("main") {
-                java.setSrcDirs(
-                    listOf(
-                        Sources.Main.KOTLIN,
-                        Sources.Main.RESOURCES
-                    )
-                )
-            }
-            getByName("test") {
-                java.setSrcDirs(
-                    listOf(
-                        Sources.Test.KOTLIN,
-                        Sources.Test.RESOURCES
-                    )
-                )
-            }
         }
     }
 
@@ -108,6 +63,68 @@ allprojects {
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
+
+// extensions
+fun BaseExtension.configureAndroid() {
+    setCompileSdkVersion(Versions.compileSdkVersion)
+    buildToolsVersion(Versions.buildToolsVersion)
+
+    defaultConfig {
+        minSdkVersion(Versions.minSdkVersion)
+        targetSdkVersion(Versions.targetSdkVersion)
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    sourceSets {
+        getByName("main") {
+            java.setSrcDirs(
+                listOf(
+                    Sources.Main.KOTLIN,
+                    Sources.Main.RESOURCES
+                )
+            )
+        }
+        getByName("test") {
+            java.setSrcDirs(
+                listOf(
+                    Sources.Test.KOTLIN,
+                    Sources.Test.RESOURCES
+                )
+            )
+        }
+    }
+}
+
+fun PublishingExtension.configure(projectName: String) =
+    configure(
+        projectName,
+        "Base android application architecture",
+        "https://github.com/mrlem/android-arch",
+        "LGPL-2.1",
+        "https://github.com/mrlem/android-arch/blob/master/LICENSE",
+        "mrlem",
+        "Sébastien Guillemin",
+        "sebastien.guillemin@gmail.com",
+        "scm:git:ssh://github.com/mrlem/kotlin-native-gnome.git",
+        "https://github.com/mrlem/android-arch",
+        java.lang.System.getenv("ORG_GRADLE_PROJECT_SONATYPE_NEXUS_USERNAME"),
+        java.lang.System.getenv("ORG_GRADLE_PROJECT_SONATYPE_NEXUS_PASSWORD")
+    )
 
 // generic extensions
 fun Project.androidApplication(configure: AppExtension.() -> Unit) =

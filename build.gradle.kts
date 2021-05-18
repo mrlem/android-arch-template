@@ -13,7 +13,7 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:4.2.1")
+        classpath("com.android.tools.build:gradle:${Versions.androidGradlePlugin}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
         classpath("io.insert-koin:koin-gradle-plugin:${Versions.koin}")
     }
@@ -35,12 +35,12 @@ allprojects {
 
     // base config for android modules
     fun BaseExtension.configureAndroid() {
-        setCompileSdkVersion(30)
-        buildToolsVersion("30.0.2")
+        setCompileSdkVersion(Versions.compileSdkVersion)
+        buildToolsVersion(Versions.buildToolsVersion)
 
         defaultConfig {
-            minSdkVersion(21)
-            targetSdkVersion(30)
+            minSdkVersion(Versions.minSdkVersion)
+            targetSdkVersion(Versions.targetSdkVersion)
             testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         }
 

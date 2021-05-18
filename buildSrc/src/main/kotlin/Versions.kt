@@ -1,5 +1,8 @@
 object Versions {
 
+    // java
+    val javaVersion = "1.8"
+
     // android
     val compileSdkVersion = 30
     val minSdkVersion = 21

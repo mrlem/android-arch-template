@@ -1,5 +1,3 @@
-rootProject.name = "android-arch"
-
 // list all projects
 include(
     ":app:ui",

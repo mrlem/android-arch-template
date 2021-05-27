@@ -3,6 +3,8 @@ import com.android.build.gradle.AppPlugin as AndroidApplicationPlugin
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.LibraryPlugin as AndroidLibraryPlugin
+import arch.Sources
+import arch.Versions
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
@@ -13,9 +15,10 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:${Versions.androidGradlePlugin}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.kotlin}")
-        classpath("io.insert-koin:koin-gradle-plugin:${Versions.koin}")
+        // FIXME - figure out how to make imports work for this
+        classpath("com.android.tools.build:gradle:${arch.Versions.androidGradlePlugin}")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${arch.Versions.kotlin}")
+        classpath("io.insert-koin:koin-gradle-plugin:${arch.Versions.koin}")
     }
 }
 
@@ -29,7 +32,7 @@ allprojects {
     tasks.withType<KotlinCompile<KotlinJvmOptions>> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = Versions.javaVersion
+            jvmTarget = arch.Versions.javaVersion
         }
     }
 
@@ -65,12 +68,12 @@ tasks.register("clean", Delete::class) {
 
 // extensions
 fun BaseExtension.configureAndroid() {
-    setCompileSdkVersion(Versions.compileSdkVersion)
-    buildToolsVersion(Versions.buildToolsVersion)
+    setCompileSdkVersion(arch.Versions.compileSdkVersion)
+    buildToolsVersion(arch.Versions.buildToolsVersion)
 
     defaultConfig {
-        minSdkVersion(Versions.minSdkVersion)
-        targetSdkVersion(Versions.targetSdkVersion)
+        minSdkVersion(arch.Versions.minSdkVersion)
+        targetSdkVersion(arch.Versions.targetSdkVersion)
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -93,16 +96,16 @@ fun BaseExtension.configureAndroid() {
         getByName("main") {
             java.setSrcDirs(
                 listOf(
-                    Sources.Main.KOTLIN,
-                    Sources.Main.RESOURCES
+                    arch.Sources.Main.KOTLIN,
+                    arch.Sources.Main.RESOURCES
                 )
             )
         }
         getByName("test") {
             java.setSrcDirs(
                 listOf(
-                    Sources.Test.KOTLIN,
-                    Sources.Test.RESOURCES
+                    arch.Sources.Test.KOTLIN,
+                    arch.Sources.Test.RESOURCES
                 )
             )
         }

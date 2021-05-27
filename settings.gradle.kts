@@ -2,15 +2,10 @@ rootProject.name = "android-arch"
 
 // list all projects
 include(
-    ":arch:app",
+    ":app:ui",
+    ":app:domain",
+    ":app:data",
+    ":arch:ui",
     ":arch:domain",
-    ":arch:data",
-    ":sample:app",
-    ":sample:domain",
-    ":sample:data"
+    ":arch:data"
 )
-
-// set project names to generate correct artifact ids
-project(":arch:app").name = "android-arch-app"
-project(":arch:domain").name = "android-arch-domain"
-project(":arch:data").name = "android-arch-data"

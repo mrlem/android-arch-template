@@ -16,10 +16,11 @@ android {
 }
 
 dependencies {
+    implementation(project(":arch:ui"))
+
     // internal
-    implementation(project(":arch:android-arch-app"))
-    implementation(project(":sample:domain"))
-    implementation(project(":sample:data"))
+    implementation(project(":app:domain"))
+    implementation(project(":app:data"))
 
     // external
     implementation("org.jetbrains.kotlin:kotlin-stdlib")

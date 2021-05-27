@@ -4,8 +4,7 @@ plugins {
 }
 
 dependencies {
-    // internal
-    implementation(project(":arch:android-arch-domain"))
+    implementation(project(":arch:domain"))
 
     // external
     implementation("org.jetbrains.kotlin:kotlin-stdlib")

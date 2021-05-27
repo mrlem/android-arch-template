@@ -4,9 +4,10 @@ plugins {
 }
 
 dependencies {
+    implementation(project(":arch:data"))
+
     // internal
-    implementation(project(":arch:android-arch-data"))
-    implementation(project(":sample:domain"))
+    implementation(project(":app:domain"))
 
     // external
     implementation("org.jetbrains.kotlin:kotlin-stdlib")

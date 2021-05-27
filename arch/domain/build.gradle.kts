@@ -1,4 +1,5 @@
-import ext.api
+import arch.Deps
+import arch.ext.api
 
 plugins {
     id("java-library")

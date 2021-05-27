@@ -1,3 +1,5 @@
+package arch
+
 object Sources {
 
     private const val SOURCES = "src"

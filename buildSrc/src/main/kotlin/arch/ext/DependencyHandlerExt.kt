@@ -1,4 +1,4 @@
-package ext
+package arch.ext
 
 import org.gradle.api.artifacts.dsl.DependencyHandler
 

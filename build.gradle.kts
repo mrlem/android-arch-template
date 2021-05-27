@@ -19,6 +19,7 @@ buildscript {
 }
 
 subprojects {
+    // FIXME - include this in arch (somehow, KotlinCompile is not recognized there)
     tasks.withType<KotlinCompile<KotlinJvmOptions>> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")

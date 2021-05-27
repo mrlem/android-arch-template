@@ -4,14 +4,10 @@ plugins {
 }
 
 android {
-    compileSdkVersion(30)
     defaultConfig {
         applicationId = "org.mrlem.sample.cleanarch"
         versionCode = 1
         versionName = "1.0"
-    }
-    buildFeatures {
-        viewBinding = true
     }
 }
 

@@ -2,7 +2,6 @@ import com.android.build.gradle.AppExtension
 import com.android.build.gradle.AppPlugin as AndroidApplicationPlugin
 import com.android.build.gradle.BaseExtension
 import com.android.build.gradle.LibraryExtension
-import ext.configure
 import com.android.build.gradle.LibraryPlugin as AndroidLibraryPlugin
 import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
 import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
@@ -109,22 +108,6 @@ fun BaseExtension.configureAndroid() {
         }
     }
 }
-
-fun PublishingExtension.configure(projectName: String) =
-    configure(
-        projectName,
-        "Base android application architecture",
-        "https://github.com/mrlem/android-arch",
-        "LGPL-2.1",
-        "https://github.com/mrlem/android-arch/blob/master/LICENSE",
-        "mrlem",
-        "Sébastien Guillemin",
-        "sebastien.guillemin@gmail.com",
-        "scm:git:ssh://github.com/mrlem/kotlin-native-gnome.git",
-        "https://github.com/mrlem/android-arch",
-        java.lang.System.getenv("ORG_GRADLE_PROJECT_SONATYPE_NEXUS_USERNAME"),
-        java.lang.System.getenv("ORG_GRADLE_PROJECT_SONATYPE_NEXUS_PASSWORD")
-    )
 
 // generic extensions
 fun Project.androidApplication(configure: AppExtension.() -> Unit) =

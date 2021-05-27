@@ -1,8 +1,8 @@
 import arch.Versions
-import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 import arch.ext.archProjects
 import arch.ext.archTasks
+import org.jetbrains.kotlin.gradle.dsl.KotlinCompile
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 buildscript {
     repositories {

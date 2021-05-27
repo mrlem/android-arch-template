@@ -8,7 +8,4 @@ dependencies {
 
     // internal
     implementation(project(":app:domain"))
-
-    // external
-    implementation("org.jetbrains.kotlin:kotlin-stdlib")
 }

@@ -41,7 +41,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private fun handleEvent(event: Event) = when (event) {
         is Timeout ->
-            Toast.makeText(this, R.string.main_notif_timeout, LENGTH_SHORT).show()
+            Toast.makeText(this, R.string.main_timeout, LENGTH_SHORT).show()
     }
 
 }

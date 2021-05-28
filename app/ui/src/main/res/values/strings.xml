@@ -4,5 +4,5 @@
     <!-- Main screen -->
     <string name="main_welcome">Welcome!</string>
     <string name="main_connect">Connect</string>
-    <string name="main_notif_timeout">Timed out!</string>
+    <string name="main_timeout">Timed out!</string>
 </resources>

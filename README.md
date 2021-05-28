@@ -19,3 +19,6 @@ That's all!
 
 From here, you can customize the app name & package.
 
+## About
+
+Author: *Sébastien Guillemin*

@@ -2,8 +2,6 @@
 
 Provides a ready to use project template.
 
-## Features
-
 * MVVM for UI layer, based on JetPack (a JetPack Compose implementation should come soon)
 * Clean-architecture
 * Reactive streams
@@ -15,4 +13,6 @@ Provides a ready to use project template.
 ## TODO
 
 * complete doc
-* demonstrated transition manager
+* demonstrate transition manager
+* fix package cleanarch -> arch
+* use material design (should be integrated in arch): see https://github.com/material-components/material-components-android/blob/master/docs/getting-started.md

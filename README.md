@@ -8,10 +8,12 @@ Provides a ready to use project template.
 
 ## Usage
 
-1. click "Use this template"
-2. name your repo
-3. clone your repo: git clone --recurse-submodules git@github.com:mrlem/my-fantastic-app.git
-4. import the clone project in Android Studio
+1. click "Use this template" to create a repo based on this one
+2. clone your repo:
+```
+git clone --recurse-submodules git@github.com:mrlem/my-fantastic-app.git
+```
+3. import the clone project in Android Studio
 
 That's all!
 From here, you can change the package in classes & build files (these are as simple as I could make them).

@@ -2,9 +2,7 @@ package org.example.myapp.features.main
 
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
-import androidx.core.view.isVisible
 import androidx.lifecycle.distinctUntilChanged
-import androidx.lifecycle.map
 import org.example.myapp.R
 import org.example.myapp.databinding.ActivityMainBinding
 import org.example.myapp.features.main.MainContract.Event
@@ -16,7 +14,13 @@ import org.mrlem.sample.arch.ext.onEvent
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val viewModel: MainViewModel by viewModel()
+
     override val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+    private val transitions by lazy { Transitions(binding.root) }
+
+    override fun initViews() {
+        transitions.applyState(viewModel.currentState)
+    }
 
     override fun initEvents() {
         binding.connect.setOnClickListener { viewModel.connect() }
@@ -24,14 +28,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun initObservations() {
         viewModel.state
-            .map { it.isConnectVisible }
             .distinctUntilChanged()
-            .observe(this, binding.connect::isVisible::set)
-
-        viewModel.state
-            .map { it.isWelcomeVisible }
-            .distinctUntilChanged()
-            .observe(this, binding.welcome::isVisible::set)
+            .observe(this, transitions::applyState)
 
         viewModel.events
             .onEvent(this, this::handleEvent)

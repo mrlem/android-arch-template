@@ -11,3 +11,8 @@ Provides a ready to use project template.
 ## Usage
 
 * TODO: clone, update submodule, gradle build
+
+## TODO
+
+* complete doc
+* demonstrated transition manager

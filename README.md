@@ -9,9 +9,9 @@ Provides a ready to use project template.
 ## Usage
 
 1. **create** a repo using the "Use this template" button on github
-2. **clone** this repo:
+2. **clone** the created repo:
 ```bash
-git clone --recurse-submodules git@github.com:mrlem/my-fantastic-app.git
+git clone --recurse-submodules git@github.com:xxx/yyy
 ```
 3. **import** the clone project in Android Studio
 

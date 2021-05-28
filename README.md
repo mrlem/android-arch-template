@@ -2,7 +2,7 @@
 
 Provides a ready to use project template.
 
-* MVVM for UI layer, based on JetPack (a JetPack Compose implementation should come soon)
+* MVVM + state for UI layer
 * Clean-architecture
 * Reactive streams
 

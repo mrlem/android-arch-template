@@ -1,4 +1,4 @@
-package org.mrlem.sample.domain.usecases
+package org.example.myapp.domain.usecases
 
 import io.reactivex.rxjava3.core.Single
 import java.util.concurrent.TimeUnit

@@ -1,4 +1,4 @@
-package org.mrlem.sample.domain.models
+package org.example.myapp.domain.models
 
 sealed class Authentication {
 

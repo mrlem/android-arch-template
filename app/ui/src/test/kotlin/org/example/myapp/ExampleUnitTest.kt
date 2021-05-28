@@ -1,4 +1,4 @@
-package org.mrlem.sample.cleanarch
+package org.example.myapp
 
 import org.junit.Test
 

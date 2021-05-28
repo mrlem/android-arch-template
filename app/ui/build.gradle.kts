@@ -5,7 +5,7 @@ plugins {
 
 android {
     defaultConfig {
-        applicationId = "org.mrlem.sample.cleanarch"
+        applicationId = "org.example.myapp"
         versionCode = 1
         versionName = "1.0"
     }

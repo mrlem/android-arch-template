@@ -1,8 +1,8 @@
-package org.mrlem.sample.cleanarch.features.main
+package org.example.myapp.features.main
 
+import org.example.myapp.domain.models.Authentication
+import org.example.myapp.domain.models.Authentication.NotAuthenticated
 import org.mrlem.sample.arch.BaseState
-import org.mrlem.sample.domain.models.Authentication
-import org.mrlem.sample.domain.models.Authentication.NotAuthenticated
 
 class MainContract {
 

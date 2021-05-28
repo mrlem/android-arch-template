@@ -1,17 +1,17 @@
-package org.mrlem.sample.cleanarch.features.main
+package org.example.myapp.features.main
 
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import androidx.core.view.isVisible
 import androidx.lifecycle.distinctUntilChanged
 import androidx.lifecycle.map
+import org.example.myapp.R
+import org.example.myapp.databinding.ActivityMainBinding
+import org.example.myapp.features.main.MainContract.Event
+import org.example.myapp.features.main.MainContract.Event.Timeout
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.mrlem.sample.arch.BaseActivity
 import org.mrlem.sample.arch.ext.onEvent
-import org.mrlem.sample.cleanarch.R
-import org.mrlem.sample.cleanarch.databinding.ActivityMainBinding
-import org.mrlem.sample.cleanarch.features.main.MainContract.Event
-import org.mrlem.sample.cleanarch.features.main.MainContract.Event.Timeout
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

@@ -1,12 +1,12 @@
-package org.mrlem.sample.cleanarch.features.main
+package org.example.myapp.features.main
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.kotlin.addTo
+import org.example.myapp.domain.repositories.AuthenticationRepository
+import org.example.myapp.domain.usecases.WaitForTimeoutUseCase
+import org.example.myapp.features.main.MainContract.*
+import org.example.myapp.features.main.MainContract.Event.Timeout
 import org.mrlem.sample.arch.BaseViewModel
-import org.mrlem.sample.cleanarch.features.main.MainContract.*
-import org.mrlem.sample.cleanarch.features.main.MainContract.Event.Timeout
-import org.mrlem.sample.domain.repositories.AuthenticationRepository
-import org.mrlem.sample.domain.usecases.WaitForTimeoutUseCase
 
 class MainViewModel(
     private val repository: AuthenticationRepository,

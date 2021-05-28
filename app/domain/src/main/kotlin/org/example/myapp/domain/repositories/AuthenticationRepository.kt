@@ -1,8 +1,8 @@
-package org.mrlem.sample.domain.repositories
+package org.example.myapp.domain.repositories
 
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
-import org.mrlem.sample.domain.models.Authentication
+import org.example.myapp.domain.models.Authentication
 
 interface AuthenticationRepository {
 

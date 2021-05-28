@@ -16,7 +16,8 @@ git clone --recurse-submodules git@github.com:mrlem/my-fantastic-app.git
 3. **import** the clone project in Android Studio
 
 That's all!
-From here, you can change the package in classes & build files (these are as simple as I could make them).
+
+From here, you can customize the app name & package.
 
 ## TODO
 

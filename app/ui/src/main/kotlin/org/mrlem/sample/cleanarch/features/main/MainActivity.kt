@@ -15,15 +15,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         viewModel.state
             .map { it.data }
             .distinctUntilChanged()
-            .observe(this, ::updateCounter)
-    }
-
-    ///////////////////////////////////////////////////////////////////////////
-    // Internal
-    ///////////////////////////////////////////////////////////////////////////
-
-    private fun updateCounter(data: String) {
-        binding.counter.text = data
+            .observe(this, binding.counter::setText)
     }
 
 }

@@ -18,4 +18,8 @@ class AuthenticationRepositoryImpl : AuthenticationRepository {
         return Single.just(true)
     }
 
+    override fun deauthenticate() {
+        _authentication.onNext(NotAuthenticated)
+    }
+
 }

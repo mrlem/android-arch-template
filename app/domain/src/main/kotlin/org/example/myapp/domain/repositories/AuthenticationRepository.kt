@@ -9,5 +9,6 @@ interface AuthenticationRepository {
     val authentication: Observable<Authentication>
 
     fun authenticate(): Single<Boolean>
+    fun deauthenticate()
 
 }

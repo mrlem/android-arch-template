@@ -22,7 +22,7 @@ class MainViewModel(
 
     override fun connect() {
         repository.authenticate()
-            .doAfterSuccess { isAuthenticated -> if (isAuthenticated) notifyOnTimeout() }
+            .doAfterSuccess { isAuthenticated -> if (isAuthenticated) waitTimeout() }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe()
             .addTo(disposeOnDestroy)
@@ -32,10 +32,13 @@ class MainViewModel(
     // Private
     ///////////////////////////////////////////////////////////////////////////
 
-    private fun notifyOnTimeout() {
+    private fun waitTimeout() {
         waitForTimeoutUseCase.execute()
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { _ -> notifyEvent(Timeout) }
+            .subscribe { _ ->
+                repository.deauthenticate()
+                notifyEvent(Timeout)
+            }
     }
 
 }

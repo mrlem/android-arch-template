@@ -7,6 +7,7 @@ import org.example.myapp.domain.usecases.WaitForTimeoutUseCase
 import org.example.myapp.features.main.MainContract.*
 import org.example.myapp.features.main.MainContract.Event.Timeout
 import org.mrlem.sample.arch.BaseViewModel
+import timber.log.Timber
 
 class MainViewModel(
     private val repository: AuthenticationRepository,
@@ -24,7 +25,7 @@ class MainViewModel(
         repository.authenticate()
             .doAfterSuccess { isAuthenticated -> if (isAuthenticated) waitTimeout() }
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe()
+            .subscribe { _ -> Timber.i("authentication completed") }
             .addTo(disposeOnDestroy)
     }
 
@@ -37,6 +38,7 @@ class MainViewModel(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { _ ->
                 repository.deauthenticate()
+                Timber.i("authentication timed out")
                 notifyEvent(Timeout)
             }
     }

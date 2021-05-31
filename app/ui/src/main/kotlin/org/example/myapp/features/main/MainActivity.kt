@@ -8,8 +8,8 @@ import org.example.myapp.databinding.ActivityMainBinding
 import org.example.myapp.features.main.MainContract.Event
 import org.example.myapp.features.main.MainContract.Event.Timeout
 import org.koin.android.viewmodel.ext.android.viewModel
-import org.mrlem.sample.arch.BaseActivity
-import org.mrlem.sample.arch.ext.onEvent
+import org.mrlem.android.arch.BaseActivity
+import org.mrlem.android.arch.ext.onEvent
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 

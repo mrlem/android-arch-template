@@ -7,7 +7,7 @@ import org.example.myapp.features.main.MainViewModel
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.dsl.bind
 import org.koin.dsl.module
-import org.mrlem.sample.arch.BaseApplication
+import org.mrlem.android.arch.BaseApplication
 
 @Suppress("unused")
 class Application : BaseApplication() {

@@ -2,7 +2,7 @@ package org.example.myapp.features.main
 
 import org.example.myapp.domain.models.Authentication
 import org.example.myapp.domain.models.Authentication.NotAuthenticated
-import org.mrlem.sample.arch.BaseState
+import org.mrlem.android.arch.BaseState
 
 class MainContract {
 

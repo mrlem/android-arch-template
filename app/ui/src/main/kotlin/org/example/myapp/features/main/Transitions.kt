@@ -7,8 +7,8 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.constraintlayout.widget.ConstraintSet.*
 import org.example.myapp.R
 import org.example.myapp.features.main.MainContract.State
-import org.mrlem.sample.arch.AllTogetherTransition
-import org.mrlem.sample.arch.BaseTransitions
+import org.mrlem.android.arch.AllTogetherTransition
+import org.mrlem.android.arch.BaseTransitions
 
 class Transitions(
     root: ConstraintLayout

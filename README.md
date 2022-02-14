@@ -1,5 +1,7 @@
 # Android application template
 
+**Obsolete: moving to compose and feature x layer modularization, see [Android Compose Template](https://github.com/mrlem/android-compose-template) for a more modern approach.**
+
 Provides a ready to use project template.
 
 * MVVM + state for UI layer
